@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/customers/<%= data.id %>/editProfile" method="POST">
+    <label for="id">ID Number</label> <br> <br>
+    <input type="text" name="identityNumber" value="<%= data.identityNumber %>">
+    <br> <br>
+    <label for="fullName">Full Name</label> <br> <br>
+    <input type="text" name="fullName" value="<%= data.fullName %>"> 
+    <br> <br>
+    <label for="Address">Address</label> <br> <br>
+    <input type="text" name="address" value="<%= data.address %>"> 
+    <br> <br>
+    <label for="birthDate">Birth Date</label> <br> <br>
+    <input type="date" name="birthDate" value="<%= data.birthDate %>"> 
+    <br> <br>
+    <label for="gender">Gender <br>
+        <input type="radio" name="male" value="male"> Male <br>
+        <input type="radio" name="female" value="female"> Female <br> <br>
+    </label> <br> <br>
+    <button type="submit">UPDATE</button>
+    </form>
+</body>
+</html>

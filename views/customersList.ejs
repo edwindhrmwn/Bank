@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <h1 style="color: green; text-align: center;">WELCOME TO HACKTIV8 BANK</h1>
+    <table border="1">
+        <thead>
+            <th>Identity Number</th>
+            <th>Full Name</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% data.forEach(el => { %>
+            <tr>
+                <td><%= el.identityNumber %></td>
+                <td><%= el.fullName %></td>
+                <td>
+                    <a href="/customers/<%= el.id %>/accounts">View Account</a> || 
+                    <a href="/customers/<%= el.id %>/editProfile">Edit Profile</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <p><a href="/customers/register">REGISTER(NEW CUSTOMER)</a></p>
+</body>
+</html>

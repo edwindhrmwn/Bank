@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/customers/">BACK</a>
+    <h1>Good day, </h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Account Number</th>
+          <th>Type</th>
+          <th>Balance</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(el => { %>
+        <tr>
+              <td><%= el.accountNumber %></td>
+              <td><%= el.type %></td>
+              <td><%= el.balance %></td>
+              <td><a href="">transfer</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <form action="/customers/<%= idCustomer %>/accounts" method="POST">
+        <label><strong>Account Type:</strong></label> <br>
+          <select name="type">
+            <option value="On Account">On Account</option>
+            <option value="Xtra Payroll">Xtra Payroll</option>
+            <option value="Tabunganku">Tabunganku</option>
+          </select> <br>
+        <label><strong>Balance:</strong></label> <br>
+        <p>
+          <input type="text" name="balance" placeholder="0">
+        </p>
+        <button type="submit">SAVE</button>
+</body>
+</html>
